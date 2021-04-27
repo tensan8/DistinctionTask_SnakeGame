@@ -1,15 +1,14 @@
-# Snake_In_C-sharp
-Simple Snake Game in C# - Made With Visual Studio
+# Distinction Taks
+## SWE20001 - Development Project 1: Tools and Practices
+### Semester 1, 2021
+### Member:
+1. Emily Hong Boon Xuan
+2. Ibrahim Naah Ahmed
+3. Alesandro Michael Ferdinand
 
-# Test the snake game in 
-Exe/Snake.exe
-<strong>No keylogger inside :^)</strong>
 
-The exe is Build on Windows
-
-Build it yourself if u are in linux or mac
-
-# Feature we can add
+# References from the main repository
+## Feature we can add
 -leaboard 
 -infinite map
 -possibility to modify the settings : speed etc
@@ -18,7 +17,7 @@ Build it yourself if u are in linux or mac
 -maps resize etc
 -MORE IDEAAAAA
 
-# Doc
+## Doc
 <ul>
 <li><p>https://www.youtube.com/watch?v=1A1Ni6oLo4w //form</p></li>
 <li><p>https://www.youtube.com/watch?v=s8YcbwVl-HI //hashtable</p></li>
@@ -34,13 +33,3 @@ Build it yourself if u are in linux or mac
 <li><p>https://stackoverflow.com/questions/5871383/difference-between-the-keydown-event-keypress-event-and-keyup-event-in-visual-s //keyDown, KeyPress && keyUp</p></li>
 <li><p>https://www.youtube.com/watch?v=6WEHNd4QkHI //keyDown, KeyPress && keyUp</p></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
