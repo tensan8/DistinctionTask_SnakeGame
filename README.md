@@ -1,4 +1,4 @@
-# Distinction Taks
+# Distinction Task
 ## SWE20001 - Development Project 1: Tools and Practices
 ### Semester 1, 2021
 ### Member:
