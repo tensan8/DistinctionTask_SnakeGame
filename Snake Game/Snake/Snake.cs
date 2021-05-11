@@ -107,7 +107,7 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-           if(visit[x, y])
+            if (visit[x, y])
             {
                 timer.Stop();
                 MessageBox.Show("Snake Hit his Body");
