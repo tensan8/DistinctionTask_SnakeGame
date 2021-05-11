@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,11 +12,10 @@ namespace Snake
 {
     public partial class Snake : Form
     {
-        private int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
-        private Piece[] snake = new Piece[1250];
-        private List<int> available = new List<int>();
-        private bool[,] visit;
-        private SoundPlayer bg_music;
+        int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
+        Piece[] snake = new Piece[1250];
+        List<int> available = new List<int>();
+        bool[,] visit;
 
         Random rand = new Random();
 
@@ -40,7 +38,7 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             dx = dy = 0;
-            switch (e.KeyCode)
+            switch(e.KeyCode)
             {
                 case Keys.Right:
                     dx = 20;
@@ -55,11 +53,6 @@ namespace Snake
                     dy = 20;
                     break;
             }
-        }
-
-        private void Snake_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void move(object sender, EventArgs e)
@@ -109,7 +102,7 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-            if (visit[x, y])
+           if (visit[x, y])
             {
                 timer.Stop();
                 MessageBox.Show("Snake Hit his Body");
@@ -131,8 +124,10 @@ namespace Snake
         private void intial()
         {
             visit = new bool[rows, cols];
-            Piece head = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-            lblFood.Location = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            Piece head 
+                = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            lblFood.Location 
+                = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                 {
@@ -142,14 +137,6 @@ namespace Snake
             visit[head.Location.Y / 20, head.Location.X / 20] = true;
             available.Remove(head.Location.Y / 20 * cols + head.Location.X / 20);
             Controls.Add(head); snake[front] = head;
-
-            playMusic();
-        }
-
-        private void playMusic()
-        {
-            bg_music = new SoundPlayer("sounds/ingame.wav");
-            bg_music.Play();
         }
     }
 }
