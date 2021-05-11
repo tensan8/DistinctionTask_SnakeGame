@@ -14,6 +14,7 @@ namespace Snake
     public partial class MainMenu : Form
     {
         private SoundPlayer opening_music = new SoundPlayer("sounds/main_menu.wav");
+        private WMPLib.WindowsMediaPlayer buttonSfx = new WMPLib.WindowsMediaPlayer();
 
         public MainMenu()
         {
@@ -27,12 +28,15 @@ namespace Snake
             exit_button.MouseLeave += OnMouseLeaveButton;
 
             opening_music.PlayLooping();
+
+            buttonSfx.URL = "sounds/button.wav";
         }
 
         private void OnMouseEnterButton(object sender, EventArgs e)
         {
             Button chosenButton = (Button)sender;
             chosenButton.ForeColor = Color.DarkRed;
+            buttonSfx.controls.play();
         }
         
         private void OnMouseLeaveButton(object sender, EventArgs e)
