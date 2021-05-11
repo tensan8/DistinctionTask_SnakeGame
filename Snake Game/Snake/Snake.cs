@@ -55,6 +55,11 @@ namespace Snake
             }
         }
 
+        private void Snake_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void move(object sender, EventArgs e)
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
