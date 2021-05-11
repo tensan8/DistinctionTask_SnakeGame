@@ -38,7 +38,7 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             dx = dy = 0;
-            switch(e.KeyCode)
+            switch (e.KeyCode)
             {
                 case Keys.Right:
                     dx = 20;
@@ -53,6 +53,11 @@ namespace Snake
                     dy = 20;
                     break;
             }
+        }
+
+        private void Snake_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void move(object sender, EventArgs e)
