@@ -41,7 +41,7 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             dx = dy = 0;
-            switch(e.KeyCode)
+            switch (e.KeyCode)
             {
                 case Keys.Right:
                     dx = 20;
@@ -110,13 +110,13 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-           if (visit[x, y])
-           {
+           if(visit[x, y])
+            {
                 timer.Stop();
                 bgMusic.Stop();
                 MessageBox.Show("Snake Hit his Body");
                 return true;
-           }
+            }
             return false;
         }
 
@@ -143,10 +143,8 @@ namespace Snake
         private void intial()
         {
             visit = new bool[rows, cols];
-            Piece head 
-                = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-            lblFood.Location 
-                = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            Piece head = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            lblFood.Location = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                 {
