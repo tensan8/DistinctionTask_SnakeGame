@@ -16,6 +16,7 @@ namespace Snake
         Piece[] snake = new Piece[1250];
         List<int> available = new List<int>();
         bool[,] visit;
+        int life = 0;
 
         Random rand = new Random();
 
@@ -26,6 +27,7 @@ namespace Snake
             InitializeComponent();
             intial();
             launchTimer();
+                       
         }
 
         private void launchTimer()
@@ -37,12 +39,14 @@ namespace Snake
 
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
+            int x = snake[front].Location.X, y = snake[front].Location.Y;
             dx = dy = 0;
+
             switch(e.KeyCode)
             {
                 case Keys.Right:
-                    dx = 20;
-                    break;
+                   dx = 20;
+                   break;
                 case Keys.Left:
                     dx = -20;
                     break;
@@ -67,7 +71,16 @@ namespace Snake
             }
             if (collisionFood(x + dx, y + dy))
             {
-                score += 1;
+                if(lblFood.BackColor == Color.Green) { 
+                    score += 20;
+                }
+                else if(lblFood.BackColor == Color.Blue) { 
+                   life +=1;
+                }
+                else { 
+                    score += 1;
+                }
+
                 lblScore.Text = "Score: " + score.ToString();
                 if (hits((y + dy) / 20, (x + dx) / 20)) return;
                 Piece head = new Piece(x + dx, y + dy);
@@ -91,11 +104,15 @@ namespace Snake
 
         private void randomFood()
         {
+            Random rand = new Random();
+            int rand_index = rand.Next(3);
+            Color[] colors = new Color[]{Color.Green,Color.Red,Color.Blue};
             available.Clear();
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                     if (!visit[i, j]) available.Add(i * cols + j);
             int idx = rand.Next(available.Count) % available.Count;
+            lblFood.BackColor = colors[rand_index];
             lblFood.Left = (available[idx] * 20) % Width;
             lblFood.Top = (available[idx] * 20) / Width * 20;
         }
@@ -116,6 +133,10 @@ namespace Snake
             return x == lblFood.Location.X && y == lblFood.Location.Y;
         }
 
+        private bool check_life()
+        {
+            return life == 0;
+        }
         private bool game_over(int x, int y)
         {
             return x < 0 || y < 0 || x > 980 || y > 480;
