@@ -107,7 +107,7 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-           if (visit[x, y])
+           if(visit[x, y])
             {
                 timer.Stop();
                 MessageBox.Show("Snake Hit his Body");
@@ -129,10 +129,8 @@ namespace Snake
         private void intial()
         {
             visit = new bool[rows, cols];
-            Piece head 
-                = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-            lblFood.Location 
-                = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            Piece head = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            lblFood.Location = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                 {
