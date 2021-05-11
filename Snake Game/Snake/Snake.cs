@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +13,11 @@ namespace Snake
 {
     public partial class Snake : Form
     {
-        int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
-        Piece[] snake = new Piece[1250];
-        List<int> available = new List<int>();
-        bool[,] visit;
+        private int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
+        private Piece[] snake = new Piece[1250];
+        private List<int> available = new List<int>();
+        private bool[,] visit;
+        private SoundPlayer bg_music;
 
         Random rand = new Random();
 
@@ -140,6 +142,14 @@ namespace Snake
             visit[head.Location.Y / 20, head.Location.X / 20] = true;
             available.Remove(head.Location.Y / 20 * cols + head.Location.X / 20);
             Controls.Add(head); snake[front] = head;
+
+            playMusic();
+        }
+
+        private void playMusic()
+        {
+            bg_music = new SoundPlayer("sounds/ingame.wav");
+            bg_music.Play();
         }
     }
 }
