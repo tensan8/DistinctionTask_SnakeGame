@@ -31,7 +31,6 @@ D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Dist
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.exe
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.pdb
-<<<<<<< HEAD
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\NUnit3.TestAdapter.dll
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\NUnit3.TestAdapter.pdb
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.engine.dll
@@ -40,8 +39,3 @@ D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Dist
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.framework.dll
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.framework.xml
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.CopyComplete
-=======
-D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.exe.config
-D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.exe
-D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.pdb
->>>>>>> main
