@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Snake
@@ -16,7 +11,8 @@ namespace Snake
         Piece[] snake = new Piece[1250];
         List<int> available = new List<int>();
         bool[,] visit;
-        int life = 0;
+        int life = 3;
+
 
         Random rand = new Random();
 
@@ -27,7 +23,7 @@ namespace Snake
             InitializeComponent();
             intial();
             launchTimer();
-                       
+
         }
 
         private void launchTimer()
@@ -42,11 +38,11 @@ namespace Snake
             int x = snake[front].Location.X, y = snake[front].Location.Y;
             dx = dy = 0;
 
-            switch(e.KeyCode)
+            switch (e.KeyCode)
             {
                 case Keys.Right:
-                   dx = 20;
-                   break;
+                    dx = 20;
+                    break;
                 case Keys.Left:
                     dx = -20;
                     break;
@@ -62,51 +58,86 @@ namespace Snake
         private void move(object sender, EventArgs e)
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
-            if (dx == 0 && dy == 0) return;
-            if (game_over(x + dx, y + dy))
+
+            if (dx == 0 && dy == 0)return;
+           
+            if (game_over(x + dx, y + dy)) 
             {
-                timer.Stop();
-                MessageBox.Show("Game Over");
-                return;
+                if (check_life())
+                {
+                    timer.Stop();
+                    MessageBox.Show("Game Over");
+                    return;
+                }
+                else {
+                    life -= 1;
+                    snake[front].Location = new Point(500,250);
+                    lblLife.Text = "Life: " + life.ToString();
+                    return;
+                 
+                }
             }
+
             if (collisionFood(x + dx, y + dy))
             {
-                if(lblFood.BackColor == Color.Green) { 
+                if (lblFood.BackColor == Color.Green)
+                {
                     score += 20;
                 }
-                else if(lblFood.BackColor == Color.Blue) { 
-                   life +=1;
+                else if (lblFood.BackColor == Color.Blue)
+                {
+                    life += 1;
                 }
-                else { 
+                else
+                {
                     score += 1;
                 }
-
+                lblLife.Text = "Life: " + life.ToString();
                 lblScore.Text = "Score: " + score.ToString();
                 if (hits((y + dy) / 20, (x + dx) / 20)) return;
                 Piece head = new Piece(x + dx, y + dy);
                 front = (front - 1 + 1250) % 1250;
                 snake[front] = head;
+                
                 visit[head.Location.Y / 20, head.Location.X / 20] = true;
+               
                 Controls.Add(head);
                 randomFood();
             }
             else
             {
-                if (hits((y + dy) / 20, (x + dx) / 20)) return;
+                if (hits((y + dy) / 20, (x + dx) / 20))return;
+
                 visit[snake[back].Location.Y / 20, snake[back].Location.X / 20] = false;
                 front = (front - 1 + 1250) % 1250;
                 snake[front] = snake[back];
                 snake[front].Location = new Point(x + dx, y + dy);
                 back = (back - 1 + 1250) % 1250;
                 visit[(y + dy) / 20, (x + dx) / 20] = true;
+                
+
+               
             }
+        }
+
+        private bool checkVisitLocation(int x, int y) 
+        {
+            if(x < 50)
+            { 
+                return true;
+            }
+            else 
+            { 
+                return false;
+            }
+        
         }
 
         private void randomFood()
         {
             Random rand = new Random();
             int rand_index = rand.Next(3);
-            Color[] colors = new Color[]{Color.Green,Color.Red,Color.Blue};
+            Color[] colors = new Color[] { Color.Green, Color.Red, Color.Blue };
             available.Clear();
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
@@ -119,11 +150,20 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-           if (visit[x, y])
+            if (visit[x, y])
             {
-                timer.Stop();
-                MessageBox.Show("Snake Hit his Body");
-                return true;
+                if (check_life())
+                {
+                    timer.Stop();
+                    MessageBox.Show("Snake Hit his Body");
+                    return true;
+                }
+                else
+                {
+                    life -= 1;
+                    lblLife.Text = "Life: " + life.ToString();
+                    return false;
+                }
             }
             return false;
         }
@@ -145,9 +185,9 @@ namespace Snake
         private void intial()
         {
             visit = new bool[rows, cols];
-            Piece head 
+            Piece head
                 = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-            lblFood.Location 
+            lblFood.Location
                 = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
