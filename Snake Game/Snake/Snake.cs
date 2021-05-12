@@ -68,25 +68,25 @@ namespace Snake
         private void move(object sender, EventArgs e)
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
-            if (dx == 0 && dy == 0)return;
-            if (game_over(x + dx, y + dy)) 
+            if(dx == 0 && dy == 0)return;
+            if(game_over(x + dx, y + dy)) 
             {
-            timer.Stop();
-            DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
-            if (dialog == DialogResult.OK)
-            {
-            EndGame end = new EndGame(score);
-            end.ShowDialog(); 
+                timer.Stop();
+                DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
+                if(dialog == DialogResult.OK)
+                {
+                    EndGame end = new EndGame(score);
+                    end.ShowDialog(); 
+                }
+                return;
             }
-            return;
-            }
-            if (collisionFood(x + dx, y + dy))
+            if(collisionFood(x + dx, y + dy))
             {
-                if (lblFood.BackColor == Color.Green)
+                if(lblFood.BackColor == Color.Green)
                 {
                     score += 20;
                 }
-                else if (lblFood.BackColor == Color.Blue)
+                else if(lblFood.BackColor == Color.Blue)
                 {
                     life += 1;
                 }
@@ -106,22 +106,20 @@ namespace Snake
             }
             else
             {
-                if (hits((y + dy) / 20, (x + dx) / 20))return;
+                if(hits((y + dy) / 20, (x + dx) / 20))return;
                 visit[snake[back].Location.Y / 20, snake[back].Location.X / 20] = false;
                 front = (front - 1 + 1250) % 1250;
                 snake[front] = snake[back];
                 snake[front].Location = new Point(x + dx, y + dy);
                 back = (back - 1 + 1250) % 1250;
-                int new_locx =(x + dx)/20;
-                int new_locy = (y+dy)/20;
+                int new_locx=(x + dx)/20;
+                int new_locy=(y+dy)/20;
                 if(new_locx >= 0 & new_locx <= 50 & new_locy >= 0 & new_locy <= 25) 
                 { 
                     visit[(y + dy) / 20, (x + dx) / 20] = true;
                 }
             }
         }
-
-        
 
         private void randomFood()
         {
@@ -134,8 +132,8 @@ namespace Snake
                     if (!visit[i, j]) available.Add(i * cols + j);
                          int idx = rand.Next(available.Count) % available.Count;
             lblFood.BackColor = colors[rand_index];
-            lblFood.Left = (available[idx] * 20) % Width;
-            lblFood.Top = (available[idx] * 20) / Width * 20;
+            lblFood.Left=(available[idx] * 20) % Width;
+            lblFood.Top=(available[idx] * 20) / Width * 20;
         }
 
         private bool hits(int x, int y)
