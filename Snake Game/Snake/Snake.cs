@@ -73,8 +73,6 @@ namespace Snake
                     life -= 1;
                     snake[front].Location = new Point(500,250);
                     lblLife.Text = "Life: " + life.ToString();
-                    return;
-                 
                 }
             }
 
@@ -113,25 +111,20 @@ namespace Snake
                 snake[front] = snake[back];
                 snake[front].Location = new Point(x + dx, y + dy);
                 back = (back - 1 + 1250) % 1250;
-                visit[(y + dy) / 20, (x + dx) / 20] = true;
-                
 
+                int new_locx =(x + dx)/20;
+                int new_locy = (y+dy)/20;
+
+                if(new_locx >= 0 & new_locx <= 50 & new_locy >= 0 & new_locy <= 25) 
+                { 
+                    visit[(y + dy) / 20, (x + dx) / 20] = true;
+                }
+;
                
             }
         }
 
-        private bool checkVisitLocation(int x, int y) 
-        {
-            if(x < 50)
-            { 
-                return true;
-            }
-            else 
-            { 
-                return false;
-            }
         
-        }
 
         private void randomFood()
         {
@@ -150,6 +143,7 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
+
             if (visit[x, y])
             {
                 if (check_life())
@@ -162,10 +156,12 @@ namespace Snake
                 {
                     life -= 1;
                     lblLife.Text = "Life: " + life.ToString();
-                    return false;
+                   
                 }
             }
             return false;
+            
+            
         }
 
         private bool collisionFood(int x, int y)
