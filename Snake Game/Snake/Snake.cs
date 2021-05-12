@@ -68,7 +68,7 @@ namespace Snake
         private void move(object sender, EventArgs e)
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
-            if(dx==0&&dy==0)return;
+            if( dx==0&&dy==0 )return;
             if(game_over(x + dx, y + dy)) 
             {
                 timer.Stop();
