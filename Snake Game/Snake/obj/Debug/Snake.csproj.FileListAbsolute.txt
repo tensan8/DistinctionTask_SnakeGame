@@ -29,17 +29,11 @@ C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.exe.config
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.exe
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.pdb
-<<<<<<< HEAD
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.framework.dll
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.framework.xml
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
-=======
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.framework.dll
-C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.framework.xml
-C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.MainMenu.resources
->>>>>>> alesandro
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.Properties.Resources.resources
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.Snake.resources
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.GenerateResource.cache
@@ -47,7 +41,4 @@ C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.CopyComplete
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.exe
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.pdb
-<<<<<<< HEAD
-=======
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.EndGame.resources
->>>>>>> alesandro
