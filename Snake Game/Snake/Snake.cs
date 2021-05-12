@@ -110,7 +110,7 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-          if (visit[x, y])
+           if (visit[x, y])
             {
                 timer.Stop();
                 bgMusic.Stop();

@@ -35,6 +35,8 @@ namespace Snake
             this.scoreboard_button = new System.Windows.Forms.Button();
             this.snakeGIF = new System.Windows.Forms.PictureBox();
             this.exit_button = new System.Windows.Forms.Button();
+            this.Snake_title = new System.Windows.Forms.Label();
+            this.Time_title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.snakeGIF)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@ namespace Snake
             this.start_button.TabIndex = 2;
             this.start_button.Text = "Start";
             this.start_button.UseVisualStyleBackColor = false;
+            this.start_button.Click += new System.EventHandler(this.start_button_Click);
             // 
             // scoreboard_button
             // 
@@ -72,6 +75,7 @@ namespace Snake
             // 
             // snakeGIF
             // 
+            this.snakeGIF.BackColor = System.Drawing.Color.Transparent;
             this.snakeGIF.Image = global::Snake.Properties.Resources.snake_anim;
             this.snakeGIF.Location = new System.Drawing.Point(224, -63);
             this.snakeGIF.Name = "snakeGIF";
@@ -96,6 +100,35 @@ namespace Snake
             this.exit_button.TabIndex = 4;
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = false;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            // 
+            // Snake_title
+            // 
+            this.Snake_title.AutoSize = true;
+            this.Snake_title.BackColor = System.Drawing.Color.Transparent;
+            this.Snake_title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Snake_title.Font = new System.Drawing.Font("Fipps", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Snake_title.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Snake_title.Location = new System.Drawing.Point(41, 42);
+            this.Snake_title.Name = "Snake_title";
+            this.Snake_title.Size = new System.Drawing.Size(450, 216);
+            this.Snake_title.TabIndex = 5;
+            this.Snake_title.Text = "Snake";
+            this.Snake_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Time_title
+            // 
+            this.Time_title.AutoSize = true;
+            this.Time_title.BackColor = System.Drawing.Color.Transparent;
+            this.Time_title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Time_title.Font = new System.Drawing.Font("Fipps", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_title.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Time_title.Location = new System.Drawing.Point(695, 42);
+            this.Time_title.Name = "Time_title";
+            this.Time_title.Size = new System.Drawing.Size(360, 216);
+            this.Time_title.TabIndex = 6;
+            this.Time_title.Text = "Time";
+            this.Time_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainMenu
             // 
@@ -104,6 +137,8 @@ namespace Snake
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(999, 501);
             this.ControlBox = false;
+            this.Controls.Add(this.Time_title);
+            this.Controls.Add(this.Snake_title);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.scoreboard_button);
             this.Controls.Add(this.start_button);
@@ -117,6 +152,7 @@ namespace Snake
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.snakeGIF)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,7 +162,7 @@ namespace Snake
         private System.Windows.Forms.Button start_button;
         private System.Windows.Forms.Button scoreboard_button;
         private System.Windows.Forms.Button exit_button;
-        private EventHandler button_start;
-        private EventHandler Button_scoreboard;
+        private System.Windows.Forms.Label Snake_title;
+        private System.Windows.Forms.Label Time_title;
     }
 }

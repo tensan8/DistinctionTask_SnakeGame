@@ -30,6 +30,8 @@ namespace Snake
             opening_music.PlayLooping();
 
             buttonSfx.URL = "sounds/button.wav";
+
+            Snake_title.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void OnMouseEnterButton(object sender, EventArgs e)
@@ -68,6 +70,17 @@ namespace Snake
         private void Button_exit_clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private void start_button_Click(object sender, EventArgs e)
+        {
+            Snake snake = new Snake();
+            snake.ShowDialog();
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
