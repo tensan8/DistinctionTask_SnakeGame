@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\NUnit3.TestAdapter.dll
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\NUnit3.TestAdapter.pdb
 D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit.engine.dll
@@ -33,10 +34,29 @@ C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\nunit
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.EndGame.resources
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.MainMenu.resources
+=======
+C:\Users\OS\source\repos\Games\Snake\Snake\bin\Debug\Snake.exe.config
+C:\Users\OS\source\repos\Games\Snake\Snake\bin\Debug\Snake.exe
+C:\Users\OS\source\repos\Games\Snake\Snake\bin\Debug\Snake.pdb
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.Properties.Resources.resources
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.csproj.GenerateResource.cache
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.exe
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.pdb
+C:\Users\OS\source\repos\Games\Snake\Snake\obj\Debug\Snake.Snake.resources
+C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.exe.config
+C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.exe
+C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\bin\Debug\Snake.pdb
+C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
+>>>>>>> emily
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.Properties.Resources.resources
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.Snake.resources
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.GenerateResource.cache
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.CopyComplete
+=======
+>>>>>>> emily
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.exe
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.pdb
