@@ -69,7 +69,7 @@ namespace Snake
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
             if(dx==0 && dy==0) return;
-            if(game_over(x + dx, y + dy)) 
+            if (game_over(x + dx, y + dy) ) 
             {
                 timer.Stop();
                 DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
