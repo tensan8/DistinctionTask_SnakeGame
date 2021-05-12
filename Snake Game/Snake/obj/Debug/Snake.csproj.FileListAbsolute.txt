@@ -38,3 +38,4 @@ C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.csproj.CopyComplete
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.exe
 C:\Users\User\Desktop\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.pdb
+D:\Campus Information\Sem 4\Development Project 1 - Tools and Practices\Lab\Distinction\DistinctionTask_SnakeGame\Snake Game\Snake\obj\Debug\Snake.EndGame.resources

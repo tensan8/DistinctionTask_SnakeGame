@@ -73,8 +73,8 @@ namespace Snake
                 DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
                 if (dialog == DialogResult.OK)
                 {
-                    MainMenu main = new MainMenu();
-                    main.ShowDialog();
+                    EndGame end = new EndGame(score);
+                    end.ShowDialog();
                 }
                 return;
             }
@@ -122,8 +122,8 @@ namespace Snake
                 DialogResult dialog = MessageBox.Show("Snake Hit his Body", "Back", MessageBoxButtons.OK);
                 if (dialog == DialogResult.OK)
                 {
-                    MainMenu main = new MainMenu();
-                    main.ShowDialog();
+                    EndGame end = new EndGame(score);
+                    end.ShowDialog();
                 }
                 return true;
             }
