@@ -1,37 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-<<<<<<< HEAD
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
-=======
->>>>>>> emily
 using System.Windows.Forms;
 
 namespace Snake
 {
     public partial class Snake : Form
     {
-<<<<<<< HEAD
         private int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
         private Piece[] snake = new Piece[1250];
         private List<int> available = new List<int>();
         private bool[,] visit;
         private SoundPlayer bgMusic = new SoundPlayer("sounds/ingame.wav");
         private WMPLib.WindowsMediaPlayer eatSfx = new WMPLib.WindowsMediaPlayer();
-=======
-        int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
-        Piece[] snake = new Piece[1250];
-        List<int> available = new List<int>();
-        bool[,] visit;
         int life = 3;
 
->>>>>>> emily
 
         Random rand = new Random();
-
         Timer timer = new Timer();
 
         public Snake()
@@ -53,10 +42,7 @@ namespace Snake
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
             dx = dy = 0;
-<<<<<<< HEAD
-=======
 
->>>>>>> emily
             switch (e.KeyCode)
             {
                 case Keys.Right:
@@ -93,6 +79,7 @@ namespace Snake
                 {
                     EndGame end = new EndGame(score);
                     end.ShowDialog();
+                    
                 }
                 return;
                 
@@ -120,7 +107,6 @@ namespace Snake
                 Piece head = new Piece(x + dx, y + dy);
                 front = (front - 1 + 1250) % 1250;
                 snake[front] = head;
-                
                 visit[head.Location.Y / 20, head.Location.X / 20] = true;
                
                 Controls.Add(head);
@@ -159,7 +145,8 @@ namespace Snake
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                     if (!visit[i, j]) available.Add(i * cols + j);
-            int idx = rand.Next(available.Count) % available.Count;
+                         int idx = rand.Next(available.Count) % available.Count;
+           
             lblFood.BackColor = colors[rand_index];
             lblFood.Left = (available[idx] * 20) % Width;
             lblFood.Top = (available[idx] * 20) / Width * 20;
@@ -167,39 +154,29 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-<<<<<<< HEAD
-            if (visit[x, y])
-            {
-                timer.Stop();
-                bgMusic.Stop();
-                DialogResult dialog = MessageBox.Show("Snake Hit his Body", "Back", MessageBoxButtons.OK);
-                if (dialog == DialogResult.OK)
-                {
-                    EndGame end = new EndGame(score);
-                    end.ShowDialog();
-                }
-                return true;
-=======
 
             if (visit[x, y])
             {
                 if (check_life())
                 {
                     timer.Stop();
-                    MessageBox.Show("Snake Hit his Body");
+                    bgMusic.Stop();
+                    DialogResult dialog = MessageBox.Show("Snake Hit his Body", "Back", MessageBoxButtons.OK);
+                    if (dialog == DialogResult.OK)
+                    {
+                        EndGame end = new EndGame(score);
+                        end.ShowDialog();
+                    }
                     return true;
                 }
                 else
-                {
+                { 
                     life -= 1;
                     lblLife.Text = "Life: " + life.ToString();
-                   
                 }
->>>>>>> emily
             }
             return false;
-            
-            
+
         }
 
         private bool collisionFood(int x, int y)
@@ -229,25 +206,19 @@ namespace Snake
         private void intial()
         {
             visit = new bool[rows, cols];
-<<<<<<< HEAD
             Piece head = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
             lblFood.Location = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-=======
-            Piece head
-                = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-            lblFood.Location
-                = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
->>>>>>> emily
+
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                 {
                     visit[i, j] = false;
                     available.Add(i * cols + j);
                 }
+            
             visit[head.Location.Y / 20, head.Location.X / 20] = true;
             available.Remove(head.Location.Y / 20 * cols + head.Location.X / 20);
             Controls.Add(head); snake[front] = head;
-
             bgMusic.PlayLooping();
 
             eatSfx.URL = "sounds/eat_food.wav";
