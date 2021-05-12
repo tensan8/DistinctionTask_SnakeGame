@@ -74,8 +74,8 @@ namespace Snake
                 DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
                 if (dialog == DialogResult.OK)
                 {
-                    EndGame end = new EndGame(score);
-                    end.ShowDialog(); 
+                EndGame end = new EndGame(score);
+                end.ShowDialog(); 
                 }
                 return;
             }
