@@ -4,6 +4,10 @@
     "\\Snake Game",
     "\\Snake Game\\Snake"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\Snake Game\\Snake\\UnitTesting.cs",
+=======
+  "SelectedNode": "\\Snake Game\\Snake\\Program.cs",
+>>>>>>> alesandro
   "PreviewInSolutionExplorer": false
 }

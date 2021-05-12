@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +13,12 @@ namespace Snake
 {
     public partial class Snake : Form
     {
-        int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
-        Piece[] snake = new Piece[1250];
-        List<int> available = new List<int>();
-        bool[,] visit;
+        private int cols = 50, rows = 25, score = 0, dx = 0, dy = 0, front = 0, back = 0;
+        private Piece[] snake = new Piece[1250];
+        private List<int> available = new List<int>();
+        private bool[,] visit;
+        private SoundPlayer bgMusic = new SoundPlayer("sounds/ingame.wav");
+        private WMPLib.WindowsMediaPlayer eatSfx = new WMPLib.WindowsMediaPlayer();
 
         Random rand = new Random();
 
@@ -38,7 +41,7 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             dx = dy = 0;
-            switch(e.KeyCode)
+            switch (e.KeyCode)
             {
                 case Keys.Right:
                     dx = 20;
@@ -67,7 +70,12 @@ namespace Snake
             if (game_over(x + dx, y + dy))
             {
                 timer.Stop();
-                MessageBox.Show("Game Over");
+                DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
+                if (dialog == DialogResult.OK)
+                {
+                    EndGame end = new EndGame(score);
+                    end.ShowDialog();
+                }
                 return;
             }
             if (collisionFood(x + dx, y + dy))
@@ -107,10 +115,16 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-           if (visit[x, y])
+            if (visit[x, y])
             {
                 timer.Stop();
-                MessageBox.Show("Snake Hit his Body");
+                bgMusic.Stop();
+                DialogResult dialog = MessageBox.Show("Snake Hit his Body", "Back", MessageBoxButtons.OK);
+                if (dialog == DialogResult.OK)
+                {
+                    EndGame end = new EndGame(score);
+                    end.ShowDialog();
+                }
                 return true;
             }
             return false;
@@ -118,21 +132,29 @@ namespace Snake
 
         private bool collisionFood(int x, int y)
         {
-            return x == lblFood.Location.X && y == lblFood.Location.Y;
+            if (x == lblFood.Location.X && y == lblFood.Location.Y)
+            {
+                eatSfx.controls.play();
+                return true;
+            }
+            return false;
         }
 
         private bool game_over(int x, int y)
         {
-            return x < 0 || y < 0 || x > 980 || y > 480;
+            if (x < 0 || y < 0 || x > 980 || y > 480)
+            {
+                bgMusic.Stop();
+                return true;
+            }
+            return false;
         }
 
         private void intial()
         {
             visit = new bool[rows, cols];
-            Piece head 
-                = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
-            lblFood.Location 
-                = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            Piece head = new Piece((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
+            lblFood.Location = new Point((rand.Next() % cols) * 20, (rand.Next() % rows) * 20);
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                 {
@@ -142,6 +164,10 @@ namespace Snake
             visit[head.Location.Y / 20, head.Location.X / 20] = true;
             available.Remove(head.Location.Y / 20 * cols + head.Location.X / 20);
             Controls.Add(head); snake[front] = head;
+
+            bgMusic.PlayLooping();
+
+            eatSfx.URL = "sounds/eat_food.wav";
         }
     }
 }
