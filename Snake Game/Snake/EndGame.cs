@@ -7,17 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Snake
 {
     public partial class EndGame : Form
     {
         private WMPLib.WindowsMediaPlayer buttonSfx = new WMPLib.WindowsMediaPlayer();
+        private SoundPlayer bgMusic = new SoundPlayer("sounds/ending.wav");
 
         public EndGame(int latestScore)
         {
             InitializeComponent();
             buttonSfx.URL = "sounds/button.wav";
+            bgMusic.PlayLooping();
+
             back_button.MouseEnter += OnMouseEnterButton;
             back_button.MouseLeave += OnMouseLeaveButton;
 

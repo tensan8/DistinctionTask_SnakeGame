@@ -44,7 +44,7 @@ namespace Snake
             this.back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.back_button.Font = new System.Drawing.Font("ArcadeClassic", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.back_button.Location = new System.Drawing.Point(398, 357);
+            this.back_button.Location = new System.Drawing.Point(417, 357);
             this.back_button.Margin = new System.Windows.Forms.Padding(2);
             this.back_button.Name = "back_button";
             this.back_button.Size = new System.Drawing.Size(130, 45);
@@ -60,7 +60,7 @@ namespace Snake
             this.pictureBox1.Location = new System.Drawing.Point(289, 24);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(348, 250);
+            this.pictureBox1.Size = new System.Drawing.Size(348, 260);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -69,7 +69,7 @@ namespace Snake
             this.latest_score_label.AutoSize = true;
             this.latest_score_label.Font = new System.Drawing.Font("ArcadeClassic", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latest_score_label.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.latest_score_label.Location = new System.Drawing.Point(369, 321);
+            this.latest_score_label.Location = new System.Drawing.Point(388, 321);
             this.latest_score_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.latest_score_label.Name = "latest_score_label";
             this.latest_score_label.Size = new System.Drawing.Size(118, 34);

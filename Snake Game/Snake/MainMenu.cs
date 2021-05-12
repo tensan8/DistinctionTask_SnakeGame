@@ -22,7 +22,7 @@ namespace Snake
             start_button.MouseEnter += OnMouseEnterButton;
             scoreboard_button.MouseEnter += OnMouseEnterButton;
             exit_button.MouseEnter += OnMouseEnterButton;
-            
+
             start_button.MouseLeave += OnMouseLeaveButton;
             scoreboard_button.MouseLeave += OnMouseLeaveButton;
             exit_button.MouseLeave += OnMouseLeaveButton;
@@ -40,7 +40,7 @@ namespace Snake
             chosenButton.ForeColor = Color.DarkRed;
             buttonSfx.controls.play();
         }
-        
+
         private void OnMouseLeaveButton(object sender, EventArgs e)
         {
             Button chosenButton = (Button)sender;
