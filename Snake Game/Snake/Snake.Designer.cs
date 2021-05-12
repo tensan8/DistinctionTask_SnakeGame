@@ -30,6 +30,7 @@
         {
             this.lblScore = new System.Windows.Forms.Label();
             this.lblFood = new System.Windows.Forms.Label();
+            this.lblLife = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblScore
@@ -51,11 +52,22 @@
             this.lblFood.TabIndex = 1;
             this.lblFood.Text = " ";
             // 
+            // lblLife
+            // 
+            this.lblLife.AutoSize = true;
+            this.lblLife.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLife.Location = new System.Drawing.Point(169, 9);
+            this.lblLife.Name = "lblLife";
+            this.lblLife.Size = new System.Drawing.Size(151, 32);
+            this.lblLife.TabIndex = 2;
+            this.lblLife.Text = "Life : 3";
+            // 
             // Snake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.lblLife);
             this.Controls.Add(this.lblFood);
             this.Controls.Add(this.lblScore);
             this.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,6 +86,7 @@
 
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblFood;
+        private System.Windows.Forms.Label lblLife;
     }
 }
 
