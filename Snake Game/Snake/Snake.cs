@@ -84,6 +84,7 @@ namespace Snake
                 {
                     score += 1;
                 }
+
                 lblLife.Text = "Life: " + life.ToString();
                 lblScore.Text = "Score: " + score.ToString();
                 if (hits((y + dy) / 20, (x + dx) / 20)) return;
