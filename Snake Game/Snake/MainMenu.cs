@@ -45,8 +45,6 @@ namespace Snake
             buttonSfx.URL = "sounds/button.wav";
 
             Snake_title.BackColor = System.Drawing.Color.Transparent;
-
-            
         }
 
         private void OnMouseEnterButton(object sender, EventArgs e)
