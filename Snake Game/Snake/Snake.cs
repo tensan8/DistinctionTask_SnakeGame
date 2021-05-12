@@ -63,17 +63,11 @@ namespace Snake
            
             if (game_over(x + dx, y + dy)) 
             {
-                if (check_life())
-                {
-                    timer.Stop();
-                    MessageBox.Show("Game Over");
-                    return;
-                }
-                else {
-                    life -= 1;
-                    snake[front].Location = new Point(500,250);
-                    lblLife.Text = "Life: " + life.ToString();
-                }
+                timer.Stop();
+                MessageBox.Show("Game Over");
+                return;
+                
+               
             }
 
             if (collisionFood(x + dx, y + dy))
