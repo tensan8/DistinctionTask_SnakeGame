@@ -135,7 +135,7 @@ namespace Snake
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(999, 501);
+            this.ClientSize = new System.Drawing.Size(1000, 500);
             this.ControlBox = false;
             this.Controls.Add(this.Time_title);
             this.Controls.Add(this.Snake_title);

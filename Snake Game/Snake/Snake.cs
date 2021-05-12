@@ -70,7 +70,12 @@ namespace Snake
             if (game_over(x + dx, y + dy))
             {
                 timer.Stop();
-                MessageBox.Show("Game Over");
+                DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
+                if (dialog == DialogResult.OK)
+                {
+                    MainMenu main = new MainMenu();
+                    main.ShowDialog();
+                }
                 return;
             }
             if (collisionFood(x + dx, y + dy))
@@ -110,11 +115,16 @@ namespace Snake
 
         private bool hits(int x, int y)
         {
-           if (visit[x, y])
+            if (visit[x, y])
             {
                 timer.Stop();
                 bgMusic.Stop();
-                MessageBox.Show("Snake Hit his Body");
+                DialogResult dialog = MessageBox.Show("Snake Hit his Body", "Back", MessageBoxButtons.OK);
+                if (dialog == DialogResult.OK)
+                {
+                    MainMenu main = new MainMenu();
+                    main.ShowDialog();
+                }
                 return true;
             }
             return false;
