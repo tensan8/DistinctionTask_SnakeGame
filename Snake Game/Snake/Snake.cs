@@ -69,15 +69,16 @@ namespace Snake
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
             if (dx == 0 && dy == 0)return;
-            if (game_over(x + dx, y + dy)) {
-                timer.Stop();
-                DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
-                if (dialog == DialogResult.OK)
-                {
-                EndGame end = new EndGame(score);
-                end.ShowDialog(); 
-                }
-                return;
+            if (game_over(x + dx, y + dy)) 
+            {
+            timer.Stop();
+            DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
+            if (dialog == DialogResult.OK)
+            {
+            EndGame end = new EndGame(score);
+            end.ShowDialog(); 
+            }
+            return;
             }
             if (collisionFood(x + dx, y + dy))
             {
