@@ -68,25 +68,25 @@ namespace Snake
         private void move(object sender, EventArgs e)
         {
             int x = snake[front].Location.X, y = snake[front].Location.Y;
-            if(dx==0 && dy==0) return;
-            if (game_over(x + dx, y + dy) ) 
+            if (dx == 0 && dy == 0) return;
+            if (game_over(x + dx, y + dy))
             {
                 timer.Stop();
                 DialogResult dialog = MessageBox.Show("Game Over", "Back", MessageBoxButtons.OK);
-                if(dialog == DialogResult.OK)
+                if (dialog == DialogResult.OK)
                 {
                     EndGame end = new EndGame(score);
-                    end.ShowDialog(); 
+                    end.ShowDialog();
                 }
                 return;
             }
-            if(collisionFood(x + dx, y + dy))
+            if (collisionFood(x + dx, y + dy))
             {
-                if(lblFood.BackColor == Color.Green)
+                if (lblFood.BackColor == Color.Green)
                 {
                     score += 20;
                 }
-                else if(lblFood.BackColor == Color.Blue)
+                else if (lblFood.BackColor == Color.Blue)
                 {
                     life += 1;
                 }
@@ -106,16 +106,16 @@ namespace Snake
             }
             else
             {
-                if(hits((y + dy) / 20, (x + dx) / 20))return;
+                if (hits((y + dy) / 20, (x + dx) / 20)) return;
                 visit[snake[back].Location.Y / 20, snake[back].Location.X / 20] = false;
                 front = (front - 1 + 1250) % 1250;
                 snake[front] = snake[back];
                 snake[front].Location = new Point(x + dx, y + dy);
                 back = (back - 1 + 1250) % 1250;
-                int new_locx=(x + dx)/20;
-                int new_locy=(y+dy)/20;
-                if(new_locx >= 0 & new_locx <= 50 & new_locy >= 0 & new_locy <= 25) 
-                { 
+                int new_locx = (x + dx) / 20;
+                int new_locy = (y + dy) / 20;
+                if (new_locx >= 0 & new_locx <= 50 & new_locy >= 0 & new_locy <= 25)
+                {
                     visit[(y + dy) / 20, (x + dx) / 20] = true;
                 }
             }
@@ -123,25 +123,31 @@ namespace Snake
 
         private void randomFood()
         {
-            Random rand = new Random();
-            int rand_index = rand.Next(3);
-            Color[] colors = new Color[] { Color.Green, Color.Red, Color.Blue };
+            Color rand_color = generateRandomColor();
             available.Clear();
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                     if (!visit[i, j]) available.Add(i * cols + j);
-                         int idx = rand.Next(available.Count) % available.Count;
-            lblFood.BackColor = colors[rand_index];
-            lblFood.Left=(available[idx] * 20) % Width;
-            lblFood.Top=(available[idx] * 20) / Width * 20;
+            int idx = rand.Next(available.Count) % available.Count;
+            lblFood.BackColor = rand_color;
+            lblFood.Left = (available[idx] * 20) % Width;
+            lblFood.Top = (available[idx] * 20) / Width * 20;
         }
 
+        public Color generateRandomColor() {
+            Random rand = new Random();
+            int rand_index = rand.Next(3);
+            Color[] colors = new Color[] { Color.Green, Color.Red, Color.Blue };
+            Color rand_color = colors[rand_index];
+            return rand_color;
+
+        }
         private bool hits(int x, int y)
         {
 
             if (visit[x, y])
             {
-                if (check_life())
+                if (no_life(life))
                 {
                     timer.Stop();
                     bgMusic.Stop();
@@ -172,9 +178,16 @@ namespace Snake
             return false;
         }
 
-        private bool check_life()
+        public bool no_life(int life)
         {
-            return life == 0;
+            if (life == 0)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+            
         }
         private bool game_over(int x, int y)
         {

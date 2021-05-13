@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace Snake
 {
@@ -11,9 +13,25 @@ namespace Snake
     class UnitTesting
     {
         [TestCase]
-        public void TestUnitTest()
+        public void NoLifeTest()
         {
-            Assert.IsTrue(true);
+            int life = 0;
+            int life2 = 2;
+            Snake snake = new Snake();
+            bool noLife = snake.no_life(life);
+            bool noLife2 = snake.no_life(life2);
+            Assert.IsTrue(noLife);
+            Assert.IsFalse(noLife2);
+        }
+
+        [TestCase]
+        public void GenerateRandomColorTest()
+        { 
+            Snake snake = new Snake();
+            Color color = snake.generateRandomColor();
+            if (color == Color.Green | color == Color.Red | color == Color.Blue) {
+                Assert.IsTrue(true);
+            }
         }
     }
 }
