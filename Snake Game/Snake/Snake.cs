@@ -77,6 +77,7 @@ namespace Snake
                 }
                 return;
             }
+
             if (collisionFood(x + dx, y + dy))
             {
                 if (lblFood.BackColor == Color.Green)

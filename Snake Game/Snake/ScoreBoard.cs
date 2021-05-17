@@ -10,8 +10,6 @@ namespace Snake
         public ScoreBoard()
         {
             InitializeComponent();
-          
-            SaveScore(100);
             ReadScore();
         }
 
@@ -45,9 +43,9 @@ namespace Snake
                 if (line != null)
                 {
                     string[] words = line.Split(',');
-                    for (int i = 0; i < words.Length; i++)
+                    for (int i = words.Length - 1; i >= 0; i--)
                     {
-                        output += (i+1).ToString() + ": " + words[i] + "\n";
+                        output += (words.Length - i).ToString() + ": " + words[i] + "\n";
 
                     }
                 }
