@@ -26,6 +26,8 @@ namespace Snake
             back_button.MouseLeave += OnMouseLeaveButton;
 
             latest_score_label.Text = "Score: " + latestScore;
+            ScoreBoard score = new ScoreBoard();
+            score.SaveScore(latestScore);
         }
 
         private void OnMouseEnterButton(object sender, EventArgs e)
@@ -45,6 +47,21 @@ namespace Snake
         {
             MainMenu menu = new MainMenu();
             menu.ShowDialog();
+        }
+
+        private void EndGame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void latest_score_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -82,5 +82,16 @@ namespace Snake
         {
             Application.Exit();
         }
+
+        private void Snake_title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scoreboard_button_Click(object sender, EventArgs e)
+        {
+            ScoreBoard sb = new ScoreBoard();
+            sb.ShowDialog();
+        }
     }
 }

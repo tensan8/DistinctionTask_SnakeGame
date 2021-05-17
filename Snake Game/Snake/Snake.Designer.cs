@@ -61,6 +61,7 @@
             this.lblLife.Size = new System.Drawing.Size(151, 32);
             this.lblLife.TabIndex = 2;
             this.lblLife.Text = "Life : 3";
+            //this.lblLife.Click += new System.EventHandler(this.lblLife_Click);
             // 
             // Snake
             // 
