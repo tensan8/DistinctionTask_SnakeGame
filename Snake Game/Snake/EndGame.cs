@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Drawing.Text;
 
 namespace Snake
 {
@@ -19,6 +14,12 @@ namespace Snake
         public EndGame(int latestScore)
         {
             InitializeComponent();
+
+            PrivateFontCollection privateFontCollection = new PrivateFontCollection();
+            privateFontCollection.AddFontFile("fonts/arcadeclassic.ttf");
+
+            back_button.Font = new Font(privateFontCollection.Families[0], 28, FontStyle.Regular);
+
             buttonSfx.URL = "sounds/button.wav";
             bgMusic.PlayLooping();
 
@@ -26,8 +27,12 @@ namespace Snake
             back_button.MouseLeave += OnMouseLeaveButton;
 
             latest_score_label.Text = "Score: " + latestScore;
+
             ScoreBoard score = new ScoreBoard();
             score.SaveScore(latestScore);
+
+            latest_score_label.Font = new Font(privateFontCollection.Families[0], 28, FontStyle.Regular);
+
         }
 
         private void OnMouseEnterButton(object sender, EventArgs e)
