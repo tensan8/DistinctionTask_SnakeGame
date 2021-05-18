@@ -26,11 +26,11 @@ namespace Snake
 
         [TestCase]
         public void GenerateRandomColorTest()
-        { 
+        {
             Snake snake = new Snake();
             Color color = snake.generateRandomColor();
             if (color == Color.Green | color == Color.Red | color == Color.Blue) {
-                Assert.IsTrue(true);
+                Assert.IsTrue( true );
             }
         }
 

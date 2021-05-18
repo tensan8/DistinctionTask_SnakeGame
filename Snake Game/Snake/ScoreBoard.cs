@@ -96,7 +96,7 @@ namespace Snake
                         if (i < words.Length - 1)
                             output += ",";
                     }
-                    
+
                 }
                 StreamWriter sw = new StreamWriter("..\\..\\score.txt");
                 sw.WriteLine(output);
