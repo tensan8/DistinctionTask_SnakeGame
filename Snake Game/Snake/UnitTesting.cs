@@ -29,8 +29,8 @@ namespace Snake
         {
             Snake snake = new Snake();
             Color color = snake.generateRandomColor();
-            if (color == Color.Green | color == Color.Red | color == Color.Blue) {
-                Assert.IsTrue( true );
+            if (color == Color.Green | color == Color.Red | color == Color.Blue){
+                Assert.IsTrue(true);
             }
         }
 
