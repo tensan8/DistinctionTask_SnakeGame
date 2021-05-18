@@ -33,5 +33,20 @@ namespace Snake
                 Assert.IsTrue(true);
             }
         }
+
+        [TestCase]
+        public void FoodCollisionTest()
+        {
+            int snakeXFalse = 0;
+            int snakeYFalse = 0;
+            int snakeXTrue = 50;
+            int snakeYTrue = 25;
+
+            Snake snake = new Snake();
+            snake.lblFood.Location = new Point(50, 25);
+
+            Assert.IsTrue(snake.collisionFood(snakeXTrue, snakeYTrue));
+            Assert.IsFalse(snake.collisionFood(snakeXFalse, snakeYFalse));
+        }
     }
 }

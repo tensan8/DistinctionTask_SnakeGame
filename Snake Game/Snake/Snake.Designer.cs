@@ -86,7 +86,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblScore;
-        private System.Windows.Forms.Label lblFood;
+        public System.Windows.Forms.Label lblFood;
         private System.Windows.Forms.Label lblLife;
     }
 }

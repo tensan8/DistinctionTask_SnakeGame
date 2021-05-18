@@ -166,7 +166,7 @@ namespace Snake
             return false;
         }
 
-        private bool collisionFood(int x, int y)
+        public bool collisionFood(int x, int y)
         {
             if (x == lblFood.Location.X && y == lblFood.Location.Y)
             {
@@ -175,6 +175,7 @@ namespace Snake
             }
             return false;
         }
+
         public bool no_life(int life)
         {
             if (life == 0)
