@@ -132,7 +132,7 @@ namespace Snake
             lblFood.Top = (available[idx] * 20) / Width * 20;
         }
 
-        public Color generateRandomColor( ){
+        public Color generateRandomColor ( ) {
             Random rand = new Random();
             int rand_index = rand.Next(3);
             Color[] colors = new Color[] { Color.Green, Color.Red, Color.Blue };
