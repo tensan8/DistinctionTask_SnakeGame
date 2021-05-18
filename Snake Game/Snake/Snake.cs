@@ -177,7 +177,6 @@ namespace Snake
             }
             return false;
         }
-
         public bool no_life(int life)
         {
             if (life == 0)
