@@ -23,7 +23,7 @@ namespace Snake
 
         private void label1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void exit_button_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Snake
         {
             String line;
             String output = "";
-            
+
             try
             {
                 StreamReader sr = new StreamReader("..\\..\\score.txt");
@@ -52,7 +52,7 @@ namespace Snake
                 score.Text = output;
 
                 sr.Close();
-                
+
             }
             catch (Exception e)
             {
@@ -82,7 +82,7 @@ namespace Snake
                     {
                         topScore[i] = Int32.Parse(words[i]);
                     }
-                    
+
                     if (topScore.Min() < currentScore)
                     {
                         int min = (topScore.ToList().IndexOf(topScore.Min()));
@@ -92,9 +92,8 @@ namespace Snake
 
                     for (int i = 0; i < words.Length; i++)
                     {
-                        
                         output += topScore[i].ToString();
-                        if(i < words.Length - 1)
+                        if (i < words.Length - 1)
                             output += ",";
                     }
                     
