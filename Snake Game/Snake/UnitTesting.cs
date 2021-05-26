@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Drawing;
 
 
@@ -48,6 +45,37 @@ namespace Snake
 
             Assert.IsTrue(snake.collisionFood(snakeXTrue, snakeYTrue));
             Assert.IsFalse(snake.collisionFood(snakeXFalse, snakeYFalse));
+        }
+
+        [TestCase]
+        public void ScoreBoard()
+        {
+            ScoreBoard sc = new ScoreBoard();
+            sc.SaveScore(99);
+            sc.SaveScore(97);
+            sc.SaveScore(100);
+            string[] words = new string[5];
+            try
+            {
+                String line;
+               
+                StreamReader sr = new StreamReader("..\\..\\score.txt");
+                line = sr.ReadLine();
+                words = line.Split(',');
+                
+                sr.Close();
+
+            }
+            catch (Exception e)
+            {
+                 Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                 Console.WriteLine("Executing finally block.");
+            }
+            Assert.AreEqual(words[0], "100");
+            Assert.AreEqual(words[2], "97");
         }
     }
 }
