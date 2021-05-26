@@ -48,7 +48,7 @@ namespace Snake
         }
 
         [TestCase]
-        public void ScoreBoard()
+        public void ScoreBoardTest()
         {
             ScoreBoard sc = new ScoreBoard();
             sc.SaveScore(99);
